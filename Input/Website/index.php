@@ -1,3 +1,5 @@
+<?php
+session_start();?>
 <!DOCTYPE html>
 <head>
 <title>HOMEPAGE</title>
@@ -29,18 +31,18 @@
   <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item active">
-        <a class="nav-link" href="homepage.html">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="Registration.html">Registration</a>
+        <a class="nav-link" href="register.php">Registration</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link " href="vitals.html" >Vitals</a>
+        <a class="nav-link " href="vitals.php" >Vitals</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0" action="#"> 
+    <form class="form-inline my-2 my-lg-0" action="#">
 	   <!--input class="form-control mr-sm-2" type="text" placeholder="Patient name" title="name"-->
-	
+
       <input class="form-control mr-sm-2" type="text" placeholder="Register ID" title="regId">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
@@ -98,15 +100,15 @@
 <p class="col-md-7 desc">
 Sepsis is the result of a massive immune response to bacterial infection that gets into the blood.
 It often leads to organ failure or injury.
-Sepsis is a medical emergency that becomes fatal or 
-life-changing for many of the individuals who develop this "blood poisoning." 
+Sepsis is a medical emergency that becomes fatal or
+life-changing for many of the individuals who develop this "blood poisoning."
 Getting urgent medical treatment is key to the chances of surviving sepsis.
 In the worst cases, sepsis leads to a life-threatening drop in blood pressure.
  Doctors call this “septic shock.” It can quickly lead to the failure of
  several organs -- lungs, kidneys, and liver. This can be fatal in some cases.
- Bacterial infections are most often to blame. But sepsis can also result from 
+ Bacterial infections are most often to blame. But sepsis can also result from
  other infections. It can begin anywhere bacteria or viruses enter the body. So,
- it could sometimes be caused by something as minor as a scraped knee or nicked cuticle. 
+ it could sometimes be caused by something as minor as a scraped knee or nicked cuticle.
  If you have a more serious medical problem such as appendicitis, pneumonia, meningitis,
  or a urinary tract infection, you’re also at risk.
 
@@ -152,12 +154,12 @@ In the worst cases, sepsis leads to a life-threatening drop in blood pressure.
 <div class="row">
 <p class="col-md-7 desc">
 
-Prevention of infection in the community involves using effective hygiene practices, 
+Prevention of infection in the community involves using effective hygiene practices,
 such as hand washing, and safe preparation of food, improving sanitation and water quality
  and availability, providing access to vaccines, particularly for those at high risk, as well
  as appropriate nutrition, including breastfeeding for newborns.
-Prevention of infection in health care facilities mainly relies on having functioning infection 
-prevention and control (IPC) programmes and teams, effective hygiene practices and precautions, 
+Prevention of infection in health care facilities mainly relies on having functioning infection
+prevention and control (IPC) programmes and teams, effective hygiene practices and precautions,
 including hand hygiene, along with a clean, well-functioning environment and equipment.
 <br>
 
@@ -182,7 +184,7 @@ including hand hygiene, along with a clean, well-functioning environment and equ
 <footer class="page-footer font-small my-0 pt-4 myfooter" >
   <div class="container-fluid text-center text-md-left">
     <div class="row">
-      <div class="col-md-6 mt-md-0 mt-3"> 
+      <div class="col-md-6 mt-md-0 mt-3">
         <h5 class="text-uppercase">Footer</h5>
         <p>Footer content</p>
       </div>

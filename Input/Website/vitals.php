@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-<title>RegPage</title>
+<title>Vitals</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -15,15 +15,15 @@
 
 
 
-  
-  
- 
 
 
 
 
-<link rel="stylesheet" href="css/Registration.css" type="text/css" >
 
+
+
+<link rel="stylesheet" href="css/vitals.css" type="text/css" >
+<script src="js/vitals.js"></script>
 
 </head>
 <body>
@@ -40,43 +40,108 @@
         <a class="nav-link" href="homepage.html">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="Registration.html">Registration</a>
+        <a class="nav-link" href="register.php">Registration</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link " href="vitals.html" >Vitals</a>
+        <a class="nav-link " href="vitals.php" >Vitals</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0" action="#"> 
-	   <!--input class="form-control mr-sm-2" type="text" placeholder="Patient name" title="name" -->
-	
+    <form class="form-inline my-2 my-lg-0" action="#">
+	   <!--input class="form-control mr-sm-2" type="text" placeholder="Patient name" title="name"-->
+
       <input class="form-control mr-sm-2" type="text" placeholder="Register ID" title="regId">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
   </div>
 </nav>
 <!-- End of Navigation bar -->
+
+<!-- Input fields -->
+
+
 <div class="outercontent">
 <div class="innercontent">
-<form class="regform">
-  <label> First Name: </label> <br>
-  <input type="text" placeholder="" /> <br>
-  <label> Last Name: </label> </br>
-  <input type="text" placeholder="" /><br>
-  <label> Weight: </label> </br>
-  <input type="text" placeholder="" /></br>
-  <label> Height: </label> </br>
-  <input type="text" placeholder="" />
+<form action="insert_vitals.php" onclick="calculate();" class="regform" method="post">
+  <label> Temperature: </label> <br>
+  <input id="temperature" name="temperature"  type="text" placeholder="in &deg;C" /> <br>
+  <label> Heart Rate: </label> </br>
+  <input id="heartrate" name="heartrate" type="text" placeholder="in bpm" /><br>
+  <label> WBC:</label> </br>
+  <input id="wbc" name="wbc" type="text" placeholder="" /></br>
+  <label> Respiratory Rate: </label> </br>
+  <input id="respiratoryrate" name="respiratoryrate" type="text" placeholder="" />
 <br>
-<button> Submit </button>
+<label> Systolic BP: </label> </br>
+  <input id="systolicbp" name="systolicbp" type="text" placeholder="" />
+<br>
+<label> Altered Mentation: </label> </br>
+  <input id="alteredmentation" name="alteredmentation" type="text" placeholder="" />
+<br>
+<br>
+<label style="font-size:18px;"> Patient Symptoms </label>
+</br>
+<div class="checkbox checkbox-success">
+  <input id="symptom1" name="symptoms" class="styled" type="checkbox" value="Confusion">
+      <label for="symptom1">Confusion</label>
+
+   </div>
+   <div class="checkbox checkbox-success">
+<input id="symptom2" name="symptoms" class="styled" type="checkbox" value="Diarrhea">
+      <label for="symptom12">Diarrhea</label>
+
+    </div>
+	<div class="checkbox checkbox-success">
+<input id="symptom3" name="symptoms" class="styled" type="checkbox" value="Dizziness">
+      <label for="symptom3">Dizziness</label>
+
+    </div>
+	<div class="checkbox checkbox-success">
+    <input id="symptom4" name="symptoms" class="styled" type="checkbox" value="Fast Heart Rate">
+<label for="symptom4">Fast Heart Rate</label>
+
+    </div>
+	<div class="checkbox checkbox-success">
+<input id="symptom5" name="symptoms" class="styled" type="checkbox" value="High Fever">
+      <label for="symptom5">High Fever</label>
+
+    </div>
+	<div class="checkbox checkbox-success">
+<input id="symptom6" name="symptoms" class="styled" type="checkbox" value="Less consciousness">
+      <label for="symptom6">Less consciousness</label>
+
+    </div>
+	<div class="checkbox checkbox-success">
+<input id="symptom7" name="symptoms" class="styled" type="checkbox" value="Muscle Pain">
+<label for="symptom7">Muscle Pain</label>
+
+    </div>
+	<div class="checkbox checkbox-success">
+<input id="symptom8" name="symptoms" class="styled" type="checkbox" value="Rapid Breathing">
+      <label for="symptom8">Rapid Breathing</label>
+
+    </div>
+	<div class="checkbox checkbox-success">
+<input id="symptom9" name="symptoms" class="styled" type="checkbox" value="Skin Discoloration">
+      <label for="symptom9">Skin Discoloration</label>
+
+    </div>
+	<div class="checkbox checkbox-success">
+<input id="symptom10" name="symptoms" class="styled" type="checkbox" value="Unusual Sweating">
+      <label for="symptom10">Unusual Sweating</label>
+
+    </div>
+<button type="submit" name="Submit"> Submit </button>
 </form>
 </div>
 </div>
+
+<!--End of Input fields -->
 <!-- Footer -->
 
 <footer class="page-footer font-small my-0 pt-4 myfooter" >
   <div class="container-fluid text-center text-md-left">
     <div class="row">
-      <div class="col-md-6 mt-md-0 mt-3"> 
+      <div class="col-md-6 mt-md-0 mt-3">
         <h5 class="text-uppercase">Footer</h5>
         <p>Footer content</p>
       </div>
@@ -129,6 +194,6 @@
 
 
 <!-- End of Footer -->
+</div>
 </body>
 </html>
-
