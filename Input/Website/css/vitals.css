@@ -19,7 +19,7 @@ color:white;
 	background-color:#1a1a00;
 	color:white;
 }
-	
+
 
 @media only screen and (max-width:700px){
 	.innercontent{
@@ -30,9 +30,9 @@ color:white;
 		margin-left:0px;
 		margin-right:0px;
 	}
-		
+
 }
-.regform{ 
+.regform{
   padding: 100px;
 }
 
@@ -75,6 +75,6 @@ button{
 
 button:hover{
   background: transparent;
-  border: 2px solid white; 
+  border: 2px solid white;
   color:white;
 }

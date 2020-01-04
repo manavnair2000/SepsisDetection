@@ -12,16 +12,6 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
-
-
-
-
-
-
-
-
-
-
 <link rel="stylesheet" href="css/vitals.css" type="text/css" >
 <script src="js/vitals.js"></script>
 
@@ -61,21 +51,25 @@
 
 <div class="outercontent">
 <div class="innercontent">
-<form action="insert_vitals.php" onclick="calculate();" class="regform" method="post">
+<form action="insert_vitals.php" onsubmit="return enable();" class="regform" method="post">
   <label> Temperature: </label> <br>
-  <input id="temperature" name="temperature"  type="text" placeholder="in &deg;C" /> <br>
+  <input id="temperature" name="temperature" oninput="SIRS();"  type="text" maxlength="2" placeholder="in &deg;C" /> <br>
   <label> Heart Rate: </label> </br>
-  <input id="heartrate" name="heartrate" type="text" placeholder="in bpm" /><br>
+  <input id="heartrate" name="heartrate" oninput="SIRS();" type="text" maxlength="2" placeholder="in bpm" /><br>
   <label> WBC:</label> </br>
-  <input id="wbc" name="wbc" type="text" placeholder="" /></br>
+  <input id="wbc" name="wbc" oninput="SIRS();" type="text" maxlength="2" placeholder="in %" /></br>
   <label> Respiratory Rate: </label> </br>
-  <input id="respiratoryrate" name="respiratoryrate" type="text" placeholder="" />
+  <input id="respiratoryrate" name="respiratoryrate" oninput="SIRS(); qSOFA();" type="text" maxlength="2" placeholder="in breaths/min" />
 <br>
 <label> Systolic BP: </label> </br>
-  <input id="systolicbp" name="systolicbp" type="text" placeholder="" />
+  <input id="systolicbp" name="systolicbp" oninput="qSOFA();" type="text" maxlength="3" placeholder="in mm Hg" />
 <br>
 <label> Altered Mentation: </label> </br>
-  <input id="alteredmentation" name="alteredmentation" type="text" placeholder="" />
+  <input id="alteredmentation" name="alteredmentation" oninput="qSOFA();" type="text" maxlength="2" placeholder="in GCS scale" /> <br/>
+  <label for="sirs"> SIRS score: </label> <br>
+  <input id="sirs" name="sirs"  type="text" value=0 disabled/> <br>
+  <label for="qsofa"> qSOFA score: </label> </br>
+  <input id="qsofa" name="qsofa" type="text" value=0 disabled/><br>
 <br>
 <br>
 <label style="font-size:18px;"> Patient Symptoms </label>
@@ -186,13 +180,6 @@
     <a href="">SDUCD</a>
   </div>
 </footer>
-
-
-
-
-
-
-
 <!-- End of Footer -->
 </div>
 </body>
