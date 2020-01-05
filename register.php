@@ -39,18 +39,11 @@ session_start();
         <a class="nav-link " href="vitals.php" >Vitals</a>
       </li-->
     </ul>
-    <form class="form-inline my-2 my-lg-0" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
+    <form class="form-inline my-2 my-lg-0" action="patient_set.php" method="post">
 	   <!--input class="form-control mr-sm-2" type="text" placeholder="Patient name" title="name" -->
-      <input class="form-control mr-sm-2" type="text" name="pid" placeholder="Register ID" title="regId">
+      <input class="form-control mr-sm-2" type="text" name="p_id" placeholder="Register ID" title="regId">
       <button class="btn btn-outline-success my-2 my-sm-0" name="Search" type="submit">Search</button>
     </form>
-    <?php
-      if ($_SERVER["REQUEST_METHOD"] == "POST") {
-          $pid = $_POST['pid'];
-          $_SESSION['pid'] = $pid;
-          header("Location:vitals.php");
-        }
-    ?>
   </div>
 </nav>
 <!-- End of Navigation bar -->

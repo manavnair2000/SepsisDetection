@@ -1,7 +1,29 @@
 <?php
 session_start();
 include './db.php';
-try{?>
+try{
+  if(isset($_SESSION['pid'])){
+    $pid = $_SESSION['pid'];
+    $sql="SELECT patient_reg_info.patient_name, FROM clinical_database.patient_reg_info WHERE patient_id = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param('i', $pid);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    if(!$row = $result->fetch_assoc())
+    {
+      echo "<script> alert('Patient ID not found!!'); window.open('register.php','_self')</script>";
+    }
+    else {
+        $pname = $row['patient_name'];
+        $sql="SELECT patient_reg_info.patient_name, FROM clinical_database.patient_reg_info WHERE patient_id = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param('i', $pid);
+        $stmt->execute();
+        exit();
+    }
+  }
+
+  ?>
 <!doctype html>
 <html lang="en">
     <head>
@@ -132,7 +154,7 @@ try{?>
                         </div>
                     </div>
                     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                        <h1 class="h2">#patient name</h1>
+                        <h1 class="h2"><?php echo $patient_name;?></h1>
                         <div class="btn-toolbar mb-2 mb-md-0">
                             <div class="btn-group mr-2">
                                 <button class="btn btn-sm btn-outline-secondary">Print</button>

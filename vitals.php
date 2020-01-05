@@ -1,5 +1,6 @@
 <?php
-session_start();?>
+session_start();
+include './db.php';?>
 <!DOCTYPE html>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
@@ -47,23 +48,18 @@ session_start();?>
         <a class="nav-link " href="#" >Patient's History</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
+    <form class="form-inline my-2 my-lg-0" action="patient_set.php" method="post">
 	   <!--input class="form-control mr-sm-2" type="text" placeholder="Patient name" title="name" -->
-      <input class="form-control mr-sm-2" type="text" name="pid" placeholder="Register ID" title="regId">
+      <input class="form-control mr-sm-2" type="text" name="p_id" placeholder="Register ID" title="regId">
       <button class="btn btn-outline-success my-2 my-sm-0" name="Search" type="submit">Search</button>
     </form>
-    <?php
-      if ($_SERVER["REQUEST_METHOD"] == "POST") {
-          $pid = $_POST['pid'];
-          $_SESSION['pid'] = $pid;
-        }
-    ?>
   </div>
 </nav>
 <!-- End of Navigation bar -->
 <div class="outercontent">
 <div class="innercontent">
 <div class="dummy">
+<br/> <br/>
 <div class="wrapper">
     <div class="grid-container">
         <div class="patient-info">
@@ -94,20 +90,20 @@ session_start();?>
     </div>
 	</div>
 	</div>
-<form action="insert_vitals.php" onsubmit="return enable();" onchange="#" class="regform" method="post">
-  <label> Temperature: </label> <br>
+<form id="vital" action="insert_vitals.php" onsubmit="return enable();" onchange="#" class="regform" method="post">
+  <!--label for="temperature"> Temperature: </label> <br-->
   <input id="temperature" name="temperature" oninput="SIRS();"  type="text" maxlength="2" placeholder="in &deg;C" /> <br>
-  <label> Heart Rate: </label> </br>
+  <!--label for="heartrate"> Heart Rate: </label> </br-->
   <input id="heartrate" name="heartrate" oninput="SIRS();" type="text" maxlength="2" placeholder="in bpm" /><br>
-  <label> WBC:</label> </br>
+  <label for="wbc"> WBC:</label> </br>
   <input id="wbc" name="wbc" oninput="SIRS();" type="text" maxlength="2" placeholder="in %" /></br>
-  <label> Respiratory Rate: </label> </br>
+  <label for="respiratoryrate"> Respiratory Rate: </label> </br>
   <input id="respiratoryrate" name="respiratoryrate" oninput="SIRS(); qSOFA();" type="text" maxlength="2" placeholder="in breaths/min" />
 <br>
-<label> Systolic BP: </label> </br>
+<label for="systolicbp"> Systolic BP: </label> </br>
   <input id="systolicbp" name="systolicbp" oninput="qSOFA();" type="text" maxlength="3" placeholder="in mm Hg" />
 <br>
-<label> Altered Mentation: </label> </br>
+<label for="alteredmentation"> Altered Mentation: </label> </br>
   <input id="alteredmentation" name="alteredmentation" oninput="qSOFA();" type="text" maxlength="2" placeholder="in GCS scale" /> <br/>
   <label for="sirs"> SIRS score: </label> <br>
   <input id="sirs" name="sirs"  type="text" value=0 disabled/> <br>
@@ -167,7 +163,7 @@ session_start();?>
       <label for="symptom10">Unusual Sweating</label>
 
     </div>
-<button type="submit" name="Submit"> Submit </button>
+<button type="submit" name="Submit" hidden> Submit </button>
 </form>
 </div>
 </div>

@@ -1,3 +1,7 @@
+function autoSubmit() {
+  var form = document.getElementById('vital');
+
+}
 function SIRS() {
   var sirs = document.getElementById("sirs");
   var temp = document.getElementById("temperature");
@@ -329,7 +333,7 @@ class ECG {
   }
 
   updateBloodPressure(){
-    document.getElementById("pressure-value").innerHTML = 
+    document.getElementById("pressure-value").innerHTML =
     "" + round(randomGaussian(130, 1)) + "/" + round(randomGaussian(90, 1));
   }
 
@@ -427,4 +431,3 @@ function touchStarted() {
   // To prevent sound bugs by browsers asking for permission
   getAudioContext().resume();
 }
-

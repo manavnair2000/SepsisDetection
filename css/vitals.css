@@ -4,7 +4,7 @@
  font-size: 15px;
  color: white;
 	text-shadow: 0 0 4px #14B51B;
-	&:after{ /* the video interlace effect I loved and didn't mind to delete */
+	&:after{ /* the video interlace effect I loved and didn't mind to delete
 		background:linear-gradient(0deg, rgba(0,0,0,0) 40%, rgba(0,0,0,.2) 80%);
 		background-size: 5px 3px;
 		display: block;
@@ -22,12 +22,12 @@
         grid-template-rows: 100vh;
         align-items: center;
         justify-items: center;
-		margin-left:20px;
+				margin-left:15vw ;
     }
 
     .grid-container {
         display: grid;
-        grid-template-columns: 200px 300px;
+        grid-template-columns: 300px 300px;
         grid-template-rows: 1fr 150px 1fr 1fr 1fr;
         grid-row-gap: 10px;
         grid-template-areas: "patient-info date""sketch-holder sketch-holder""bpm minute-ventilation""temperature hb-levels""pressure other";
@@ -52,7 +52,12 @@
     .bpm {
         grid-area: bpm;
     }
-
+#temperature{
+	display: none;
+}
+#heartrate{
+	display: none;
+}
 .innercontent{
 margin-left:10%;
 margin-right:10%;
@@ -90,9 +95,9 @@ text-spacing:1px;
 		margin-left:0px;
 		margin-right:0px;
 	}
-     .wrapper{
+/*     .wrapper{
 	 max-width:100%;
-	 }
+	 }*/
 }
 .regform{
   padding: 100px;
