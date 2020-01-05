@@ -1,10 +1,17 @@
 <?php
 session_start();?>
 <!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<html>
+
 <head>
 <title>Vitals</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Cutive+Mono&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.sound.min.js"></script>
+    <script language="javascript" type="text/javascript" src="./sketch.js" defer></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
@@ -16,9 +23,8 @@ session_start();?>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="css/vitals.css" type="text/css" >
 <script src="js/vitals.js"></script>
-
 </head>
-<body>
+<body >
 <!-- Navigation bar -->
 <nav class="navbar navbar-expand-lg navbar-dark navbar-static-top bg-dark">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="true" aria-label="Toggle navigation">
@@ -37,6 +43,9 @@ session_start();?>
       <li class="nav-item">
         <a class="nav-link " href="vitals.php" >Vitals</a>
       </li>
+	  <li class="nav-item">
+        <a class="nav-link " href="#" >Patient's History</a>
+      </li>
     </ul>
     <form class="form-inline my-2 my-lg-0" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
 	   <!--input class="form-control mr-sm-2" type="text" placeholder="Patient name" title="name" -->
@@ -52,13 +61,40 @@ session_start();?>
   </div>
 </nav>
 <!-- End of Navigation bar -->
-
-<!-- Input fields -->
-
-
 <div class="outercontent">
 <div class="innercontent">
-<form action="insert_vitals.php" onsubmit="return enable();" class="regform" method="post">
+<div class="dummy">
+<div class="wrapper">
+    <div class="grid-container">
+        <div class="patient-info">
+            Patient name
+        </div>
+        <div class="date text-right">
+            <span id="date-value" ></span>
+        </div>
+        <div id="sketch-holder" class="sketch-holder"></div>
+        <div class="bpm">
+            Heart rate: <span id="heart-rate-value">60</span> bpm
+        </div>
+        <div class="temperature text-right">
+            Temperature: <span id="temperature-value">98.6</span> °F
+        </div>
+        <div class="pressure">
+            Blood Pressure: <span id="pressure-value">132/88</span> mmHg
+        </div>
+        <div class="hb-levels text-right">
+            Hemoglobin: <span id="hemoglobin-value">14.1</span> g/dl
+        </div>
+        <div class="minute-ventilation">
+            Minute ventilation: <span id="minute-ventilation-value"> 6.14 </span> L/min
+        </div>
+        <div class="other">
+
+        </div>
+    </div>
+	</div>
+	</div>
+<form action="insert_vitals.php" onsubmit="return enable();" onchange="#" class="regform" method="post">
   <label> Temperature: </label> <br>
   <input id="temperature" name="temperature" oninput="SIRS();"  type="text" maxlength="2" placeholder="in &deg;C" /> <br>
   <label> Heart Rate: </label> </br>
@@ -189,5 +225,8 @@ session_start();?>
 </footer>
 <!-- End of Footer -->
 </div>
+
+
 </body>
+
 </html>
