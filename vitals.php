@@ -45,7 +45,7 @@ include './db.php';?>
         <a class="nav-link " href="vitals.php" >Vitals</a>
       </li>
 	  <li class="nav-item">
-        <a class="nav-link " href="#" >Patient's History</a>
+        <a class="nav-link " href="patient_details.php" >Patient's History</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0" action="patient_set.php" method="post">
