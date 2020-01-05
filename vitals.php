@@ -178,7 +178,7 @@ try{
       <label for="symptom10">Unusual Sweating</label>
 
     </div>
-<button type="submit" id="Submit" name="Submit" hidden> Submit </button>
+<button type="submit" id="Submit" name="Submit"> Submit </button>
 </form>
 </div>
 </div>

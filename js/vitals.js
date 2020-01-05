@@ -1,4 +1,4 @@
-function autoSubmit() {
+function clickSubmit() {
   var form = document.getElementById('vital');
   var submit = document.getElementById('Submit');
   var temp = parseInt(document.getElementById("temperature-value").innerText);
@@ -359,11 +359,12 @@ class ECG {
 
   updateDate() {
     let date = new Date();
+    let month = date.getMonth()+1;
     date =
       "" +
       date.getFullYear() +
       "-" +
-      date.getMonth() +
+      month +
       "-" +
       date.getDate() +
       " " +
