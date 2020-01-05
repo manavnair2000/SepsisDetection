@@ -36,23 +36,21 @@ session_start();?>
       <li class="nav-item">
         <a class="nav-link" href="register.php">Registration</a>
       </li>
-      <li class="nav-item">
+      <!--li class="nav-item">
         <a class="nav-link " href="vitals.php" >Vitals</a>
-      </li>
+      </li-->
     </ul>
-    <form class="form-inline my-2 my-lg-0" action="#">
+    <form class="form-inline my-2 my-lg-0" action="patient_set.php" method="post">
 	   <!--input class="form-control mr-sm-2" type="text" placeholder="Patient name" title="name"-->
 
-      <input class="form-control mr-sm-2" type="text" placeholder="Register ID" title="regId">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      <input class="form-control mr-sm-2" type="text" name="p_id" placeholder="Register ID" title="regId">
+      <button class="btn btn-outline-success my-2 my-sm-0" name="Search" type="submit">Search</button>
     </form>
   </div>
 </nav>
 <!-- End of Navigation bar -->
 
 <!---   Carousal controls  -->
-
-
 
 <div id="carouselheader" class="carousel slide" data-ride="carousel" data-interval="2000">
   <ol class="carousel-indicators">
@@ -229,13 +227,6 @@ including hand hygiene, along with a clean, well-functioning environment and equ
     <a href="">SDUCD</a>
   </div>
 </footer>
-
-
-
-
-
-
-
 <!-- End of Footer -->
 </div>
 </body>

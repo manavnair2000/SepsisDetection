@@ -1,3 +1,5 @@
+<?php
+session_start();?>
 <!DOCTYPE html>
 <head>
 <title>Vitals</title>
@@ -36,12 +38,17 @@
         <a class="nav-link " href="vitals.php" >Vitals</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0" action="#">
-	   <!--input class="form-control mr-sm-2" type="text" placeholder="Patient name" title="name"-->
-
-      <input class="form-control mr-sm-2" type="text" placeholder="Register ID" title="regId">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    <form class="form-inline my-2 my-lg-0" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
+	   <!--input class="form-control mr-sm-2" type="text" placeholder="Patient name" title="name" -->
+      <input class="form-control mr-sm-2" type="text" name="pid" placeholder="Register ID" title="regId">
+      <button class="btn btn-outline-success my-2 my-sm-0" name="Search" type="submit">Search</button>
     </form>
+    <?php
+      if ($_SERVER["REQUEST_METHOD"] == "POST") {
+          $pid = $_POST['pid'];
+          $_SESSION['pid'] = $pid;
+        }
+    ?>
   </div>
 </nav>
 <!-- End of Navigation bar -->
@@ -75,52 +82,52 @@
 <label style="font-size:18px;"> Patient Symptoms </label>
 </br>
 <div class="checkbox checkbox-success">
-  <input id="symptom1" name="symptoms" class="styled" type="checkbox" value="Confusion">
+  <input id="symptom1" name="symptoms[]" class="styled" type="checkbox" value="Confusion">
       <label for="symptom1">Confusion</label>
 
    </div>
    <div class="checkbox checkbox-success">
-<input id="symptom2" name="symptoms" class="styled" type="checkbox" value="Diarrhea">
+<input id="symptom2" name="symptoms[]" class="styled" type="checkbox" value="Diarrhea">
       <label for="symptom12">Diarrhea</label>
 
     </div>
 	<div class="checkbox checkbox-success">
-<input id="symptom3" name="symptoms" class="styled" type="checkbox" value="Dizziness">
+<input id="symptom3" name="symptoms[]" class="styled" type="checkbox" value="Dizziness">
       <label for="symptom3">Dizziness</label>
 
     </div>
 	<div class="checkbox checkbox-success">
-    <input id="symptom4" name="symptoms" class="styled" type="checkbox" value="Fast Heart Rate">
+    <input id="symptom4" name="symptoms[]" class="styled" type="checkbox" value="Fast Heart Rate">
 <label for="symptom4">Fast Heart Rate</label>
 
     </div>
 	<div class="checkbox checkbox-success">
-<input id="symptom5" name="symptoms" class="styled" type="checkbox" value="High Fever">
+<input id="symptom5" name="symptoms[]" class="styled" type="checkbox" value="High Fever">
       <label for="symptom5">High Fever</label>
 
     </div>
 	<div class="checkbox checkbox-success">
-<input id="symptom6" name="symptoms" class="styled" type="checkbox" value="Less consciousness">
+<input id="symptom6" name="symptoms[]" class="styled" type="checkbox" value="Less consciousness">
       <label for="symptom6">Less consciousness</label>
 
     </div>
 	<div class="checkbox checkbox-success">
-<input id="symptom7" name="symptoms" class="styled" type="checkbox" value="Muscle Pain">
+<input id="symptom7" name="symptoms[]" class="styled" type="checkbox" value="Muscle Pain">
 <label for="symptom7">Muscle Pain</label>
 
     </div>
 	<div class="checkbox checkbox-success">
-<input id="symptom8" name="symptoms" class="styled" type="checkbox" value="Rapid Breathing">
+<input id="symptom8" name="symptoms[]" class="styled" type="checkbox" value="Rapid Breathing">
       <label for="symptom8">Rapid Breathing</label>
 
     </div>
 	<div class="checkbox checkbox-success">
-<input id="symptom9" name="symptoms" class="styled" type="checkbox" value="Skin Discoloration">
+<input id="symptom9" name="symptoms[]" class="styled" type="checkbox" value="Skin Discoloration">
       <label for="symptom9">Skin Discoloration</label>
 
     </div>
 	<div class="checkbox checkbox-success">
-<input id="symptom10" name="symptoms" class="styled" type="checkbox" value="Unusual Sweating">
+<input id="symptom10" name="symptoms[]" class="styled" type="checkbox" value="Unusual Sweating">
       <label for="symptom10">Unusual Sweating</label>
 
     </div>
@@ -144,7 +151,7 @@
         <h5 class="text-uppercase">Learn More</h5>
         <ul class="list-unstyled">
           <li>
-            <a href="https://www.mayoclinic.org/diseases-conditions/sepsis/symptoms-causes/syc-20351214">Mayoclinic</a>
+            <a href="https://www.mayoclinic.org/diseases-conditions/sepsis/symptoms[]-causes/syc-20351214">Mayoclinic</a>
           </li>
           <li>
             <a href="https://www.medicalnewstoday.com/articles/305782.php">medicalnewstoday</a>

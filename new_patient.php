@@ -10,7 +10,20 @@ try{
 		$stmt = $conn->prepare($sql);
 		$stmt->bind_param('sii', $patient_name,$patient_weight,$patient_height);
 		$stmt->execute();
-		echo "<script>window.location.href='vitals.php'; </script>";
+    $sql="SELECT patient_reg_info.patient_id FROM clinical_database.patient_reg_info WHERE patient_name = ? and patient_weight = ? and patient_height = ? ";
+		$stmt = $conn->prepare($sql);
+		$stmt->bind_param('sii', $patient_name,$patient_weight,$patient_height);
+		$stmt->execute();
+		$result = $stmt->get_result();
+		if(!$row = $result->fetch_assoc())
+		{
+		    echo "<script> alert('Patient ID not found!!'); window.open('register.php','_self')</script>";
+		}
+		else {
+		    $_SESSION['pid'] = $row['patient_id'];
+		    header("Location: vitals.php");
+			exit();
+		}
   }
 }
 catch(Exception $e){

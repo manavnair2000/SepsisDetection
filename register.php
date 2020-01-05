@@ -35,16 +35,22 @@ session_start();
       <li class="nav-item">
         <a class="nav-link" href="register.php">Registration</a>
       </li>
-      <li class="nav-item">
+      <!--li class="nav-item">
         <a class="nav-link " href="vitals.php" >Vitals</a>
-      </li>
+      </li-->
     </ul>
-    <form class="form-inline my-2 my-lg-0" action="#">
+    <form class="form-inline my-2 my-lg-0" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
 	   <!--input class="form-control mr-sm-2" type="text" placeholder="Patient name" title="name" -->
-
-      <input class="form-control mr-sm-2" type="text" placeholder="Register ID" title="regId">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      <input class="form-control mr-sm-2" type="text" name="pid" placeholder="Register ID" title="regId">
+      <button class="btn btn-outline-success my-2 my-sm-0" name="Search" type="submit">Search</button>
     </form>
+    <?php
+      if ($_SERVER["REQUEST_METHOD"] == "POST") {
+          $pid = $_POST['pid'];
+          $_SESSION['pid'] = $pid;
+          header("Location:vitals.php");
+        }
+    ?>
   </div>
 </nav>
 <!-- End of Navigation bar -->
@@ -111,13 +117,6 @@ session_start();
     <a href="">SDUCD</a>
   </div>
 </footer>
-
-
-
-
-
-
-
 <!-- End of Footer -->
 </body>
 </html>

@@ -17,10 +17,19 @@ try{
 		$stmt = $conn->prepare($sql);
 		$stmt->bind_param('iiiiiiiii', $pid,$sirs,$temperature,$heartrate,$wbc,$respiratoryrate,$qsofa,$systolicbp,$alteredmentation);
 		$stmt->execute();
+		foreach ($symptoms as $symptom){
+			$sql="INSERT INTO clinical_database.patient_symptoms (patient_id,patient_symptoms) VALUES(?,?)";
+			$stmt = $conn->prepare($sql);
+			$stmt->bind_param('is', $pid,$symptom);
+			$stmt->execute();
+		}
+		header("Location:patient_details.php");
   }
+	elseif (!isset($_SESSION['pid'])) {
+		echo "<script> window.alert('Enter patient ID first!!'); window.location.href='index.php'; </script>";
+	}
 }
 catch(Exception $e){
 	echo "<script> window.alert('Unable to process request :$e->getMessage()'); window.location.href='index.php'; </script>";
 }
-
 ?>

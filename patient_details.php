@@ -1,3 +1,7 @@
+<?php
+session_start();
+include './db.php';
+try{?>
 <!doctype html>
 <html lang="en">
     <head>
@@ -16,9 +20,9 @@
         <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
             <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Company name</a>
             <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
-            <ul class="navbar-nav px-3">
+            <ul class="navbar-nav px-3" style="background-color: #2ccd27;">
                 <li class="nav-item text-nowrap">
-                    <a class="nav-link" href="#">Sign out</a>
+                    <a class="nav-link" href="#">Go</a>
                 </li>
             </ul>
         </nav>
@@ -28,98 +32,92 @@
                     <div class="sidebar-sticky">
                         <ul class="nav flex-column">
                             <li class="nav-item">
-                                <a class="nav-link active" href="#"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
+                                <a class="nav-link active" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
                                         <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                                         <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                                    </svg>
-                                Dashboard <span class="sr-only">(current)</span> </a>
+                                    </svg>&nbsp;SOFA Monitor<span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+                                <a class="nav-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
                                         <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
                                         <polyline points="13 2 13 9 20 9"></polyline>
-                                    </svg>
-                                Orders </a>
+                                    </svg>&nbsp;Patient File</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart">
+                                <a class="nav-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart">
                                         <circle cx="9" cy="21" r="1"></circle>
                                         <circle cx="20" cy="21" r="1"></circle>
                                         <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                                    </svg>
-                                Products </a>
+                                    </svg>&nbsp;#Placeholder</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users">
+                                <a class="nav-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users">
                                         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                                         <circle cx="9" cy="7" r="4"></circle>
                                         <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
                                         <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
                                     </svg>
-                                Customers </a>
+                                PlaceHolder</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bar-chart-2">
+                                <a class="nav-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bar-chart-2">
                                         <line x1="18" y1="20" x2="18" y2="10"></line>
                                         <line x1="12" y1="20" x2="12" y2="4"></line>
                                         <line x1="6" y1="20" x2="6" y2="14"></line>
                                     </svg>
-                                Reports </a>
+                                PlaceHolder</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers">
+                                <a class="nav-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers">
                                         <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
                                         <polyline points="2 17 12 22 22 17"></polyline>
                                         <polyline points="2 12 12 17 22 12"></polyline>
                                     </svg>
-                                Integrations </a>
+                                Placeholder</a>
                             </li>
                         </ul>
-                        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted"> <span>Saved reports</span> <a class="d-flex align-items-center text-muted" href="#"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle">
+                        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted"> <span>PlaceHOLDER</span> <a class="d-flex align-items-center text-muted" href="#"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle">
                                     <circle cx="12" cy="12" r="10"></circle>
                                     <line x1="12" y1="8" x2="12" y2="16"></line>
                                     <line x1="8" y1="12" x2="16" y2="12"></line>
                                 </svg> </a> </h6>
                         <ul class="nav flex-column mb-2">
                             <li class="nav-item">
-                                <a class="nav-link" href="#"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+                                <a class="nav-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
                                         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                                         <polyline points="14 2 14 8 20 8"></polyline>
                                         <line x1="16" y1="13" x2="8" y2="13"></line>
                                         <line x1="16" y1="17" x2="8" y2="17"></line>
                                         <polyline points="10 9 9 9 8 9"></polyline>
                                     </svg>
-                                Current month </a>
+                                Placeholder</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+                                <a class="nav-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
                                         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                                         <polyline points="14 2 14 8 20 8"></polyline>
                                         <line x1="16" y1="13" x2="8" y2="13"></line>
                                         <line x1="16" y1="17" x2="8" y2="17"></line>
                                         <polyline points="10 9 9 9 8 9"></polyline>
-                                    </svg>
-                                Last quarter </a>
+                                    </svg>&nbsp;PlaceHolder</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+                                <a class="nav-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
                                         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                                         <polyline points="14 2 14 8 20 8"></polyline>
                                         <line x1="16" y1="13" x2="8" y2="13"></line>
                                         <line x1="16" y1="17" x2="8" y2="17"></line>
                                         <polyline points="10 9 9 9 8 9"></polyline>
-                                    </svg>
-                                Social engagement </a>
+                                    </svg>&nbsp;PlaceHolder</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+                                <a class="nav-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
                                         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                                         <polyline points="14 2 14 8 20 8"></polyline>
                                         <line x1="16" y1="13" x2="8" y2="13"></line>
                                         <line x1="16" y1="17" x2="8" y2="17"></line>
                                         <polyline points="10 9 9 9 8 9"></polyline>
-                                    </svg>
-                                Year-end sale </a>
+                                    </svg>&nbsp;PlaceHolder</a>
                             </li>
                         </ul>
                     </div>
@@ -167,35 +165,35 @@
                             <tbody>
                                 <tr>
                                     <td>1</td>
-                                    <td>Lorem</td>
-                                    <td>ipsum</td>
-                                    <td>dolor</td>
-                                    <td>sit</td>
+                                    <td>Temperature</td>
+                                    <td>#val</td>
+                                    <td>#val</td>
+                                    <td>#val</td>
                                 </tr>
                                 <tr>
-                                    <td>1</td>
-                                    <td>amet</td>
-                                    <td>consectetur</td>
-                                    <td>adipiscing</td>
-                                    <td>elit</td>
+                                    <td>2</td>
+                                    <td>Blood pressure</td>
+                                    <td>#val</td>
+                                    <td>#val</td>
+                                    <td>#val</td>
                                 </tr>
                                 <tr>
-                                    <td>1</td>
-                                    <td>Integer</td>
-                                    <td>nec</td>
-                                    <td>odio</td>
-                                    <td>Praesent</td>
+                                    <td>3</td>
+                                    <td>O2 levels</td>
+                                    <td>#val</td>
+                                    <td>#val</td>
+                                    <td>#val</td>
                                 </tr>
                                 <tr>
-                                    <td>1,003</td>
-                                    <td>libero</td>
-                                    <td>Sed</td>
-                                    <td>cursus</td>
-                                    <td>ante</td>
+                                    <td>3</td>
+                                    <td>Respiration</td>
+                                    <td>#val</td>
+                                    <td>#val</td>
+                                    <td>#val</td>
                                 </tr>
                                 <tr>
-                                    <td>1,004</td>
-                                    <td>dapibus</td>
+                                    <td>5</td>
+                                    <td>saved for future</td>
                                     <td>diam</td>
                                     <td>Sed</td>
                                     <td>nisi</td>
@@ -299,9 +297,9 @@
       var myChart = new Chart(ctx, {
           type: 'line',
           data: {
-              labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+              labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday","shit"],
               datasets: [{
-                  data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
+                  data: [15, 21, 18, 24, 23, 24, 12,9000],
                   lineTension: 0,
                   backgroundColor: 'transparent',
                   borderColor: '#007bff',
