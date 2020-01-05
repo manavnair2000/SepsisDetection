@@ -18,7 +18,6 @@ try{
 
           $_SESSION['pid'] = $row['patient_id'];
           header("Location: vitals.php");
-          exit();
       }
   }
   elseif(!isset($_POST['p_id'])){

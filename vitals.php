@@ -1,6 +1,21 @@
 <?php
 session_start();
-include './db.php';?>
+include './db.php';
+try{
+  if(isset($_SESSION['pid'])){
+    $pid = $_SESSION['pid'];
+    $sql="SELECT patient_reg_info.patient_name FROM clinical_database.patient_reg_info WHERE patient_id = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param('i', $pid);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    if(!$row = $result->fetch_assoc())
+    {
+      echo "<script> alert('Patient ID not found!!'); window.open('register.php','_self')</script>";
+    }
+    else {
+        $pname = $row['patient_name'];
+  ?>
 <!DOCTYPE html>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
@@ -63,7 +78,7 @@ include './db.php';?>
 <div class="wrapper">
     <div class="grid-container">
         <div class="patient-info">
-            Patient name
+          <h3><?php echo $pname;?></h3>
         </div>
         <div class="date text-right">
             <span id="date-value" ></span>
@@ -90,11 +105,11 @@ include './db.php';?>
     </div>
 	</div>
 	</div>
-<form id="vital" action="insert_vitals.php" onsubmit="return enable();" onchange="#" class="regform" method="post">
+<form id="vital" action="insert_vitals.php" onchange="changeSubmit();" class="regform" method="post">
   <!--label for="temperature"> Temperature: </label> <br-->
-  <input id="temperature" name="temperature" oninput="SIRS();"  type="text" maxlength="2" placeholder="in &deg;C" /> <br>
+  <input id="temperature" name="temperature" type="text" maxlength="2" placeholder="in &deg;C" /> <br>
   <!--label for="heartrate"> Heart Rate: </label> </br-->
-  <input id="heartrate" name="heartrate" oninput="SIRS();" type="text" maxlength="2" placeholder="in bpm" /><br>
+  <input id="heartrate" name="heartrate" type="text" maxlength="2" placeholder="in bpm" /><br>
   <label for="wbc"> WBC:</label> </br>
   <input id="wbc" name="wbc" oninput="SIRS();" type="text" maxlength="2" placeholder="in %" /></br>
   <label for="respiratoryrate"> Respiratory Rate: </label> </br>
@@ -163,7 +178,7 @@ include './db.php';?>
       <label for="symptom10">Unusual Sweating</label>
 
     </div>
-<button type="submit" name="Submit" hidden> Submit </button>
+<button type="submit" id="Submit" name="Submit" hidden> Submit </button>
 </form>
 </div>
 </div>
@@ -226,3 +241,11 @@ include './db.php';?>
 </body>
 
 </html>
+<?php
+    }
+  }
+}
+catch(Exception $e){
+	echo "<script> window.alert('Unable to process request :$e->getMessage()'); window.location.href='index.php'; </script>";
+}
+?>

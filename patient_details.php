@@ -19,10 +19,6 @@ try{
         $stmt = $conn->prepare($sql);
         $stmt->bind_param('i', $pid);
         $stmt->execute();
-        exit();
-    }
-  }
-
   ?>
 <!doctype html>
 <html lang="en">
@@ -346,4 +342,10 @@ try{
     </body>
 </html>
 <?php
-}?>
+    }
+  }
+}
+catch(Exception $e){
+	echo "<script> window.alert('Unable to process request :$e->getMessage()'); window.location.href='index.php'; </script>";
+}
+?>

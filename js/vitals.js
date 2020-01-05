@@ -1,18 +1,38 @@
 function autoSubmit() {
   var form = document.getElementById('vital');
-
+  var submit = document.getElementById('Submit');
+  var temp = parseInt(document.getElementById("temperature-value").innerText);
+  var hr = parseInt(document.getElementById("heart-rate-value").innerText);
+  var temp_field = document.getElementById('temperature');
+  var hr_field = document.getElementById('heartrate');
+  temp_field.value = temp;
+  hr_field.value = hr;
+  enable();
+  submit.click();
+}
+function changeSubmit() {
+  var form = document.getElementById('vital');
+  var submit = document.getElementById('Submit');
+  var temp = parseInt(document.getElementById("temperature-value").innerText);
+  var hr = parseInt(document.getElementById("heart-rate-value").innerText);
+  var temp_field = document.getElementById('temperature');
+  var hr_field = document.getElementById('heartrate');
+  temp_field.value = temp;
+  hr_field.value = hr;
+  enable();
+  submit.click();
 }
 function SIRS() {
   var sirs = document.getElementById("sirs");
-  var temp = document.getElementById("temperature");
-  var hr = document.getElementById("heartrate");
+  var temp = parseInt(document.getElementById("temperature-value").innerText);
+  var hr = parseInt(document.getElementById("heart-rate-value").innerText);
   var wbc = document.getElementById('wbc');
   var rr = document.getElementById('respiratoryrate');
   var score = 0;
-  if((temp.value>38 || temp.value<36)&&(temp.value)){
+  if((temp>38 || temp<36)&&(temp)){
     score++;
   }
-  if(hr.value>90 && hr.value ){
+  if(hr>90 && hr){
     score++;
   }
   if(wbc.value>10 && wbc.value){

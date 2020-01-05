@@ -22,7 +22,6 @@ try{
 		else {
 		    $_SESSION['pid'] = $row['patient_id'];
 		    header("Location: vitals.php");
-			exit();
 		}
   }
 }
