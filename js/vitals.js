@@ -1,6 +1,6 @@
 function clickSubmit() {
-  var form = document.getElementById('vital');
-  var submit = document.getElementById('Submit');
+  //var form = document.getElementById('vital');
+  //var submit = document.getElementById('Submit');
   var temp = parseInt(document.getElementById("temperature-value").innerText);
   var hr = parseInt(document.getElementById("heart-rate-value").innerText);
   var temp_field = document.getElementById('temperature');
@@ -8,9 +8,10 @@ function clickSubmit() {
   temp_field.value = temp;
   hr_field.value = hr;
   enable();
-  submit.click();
+  return true;
+  //submit.click();
 }
-function changeSubmit() {
+function NochangeSubmit() {
   var form = document.getElementById('vital');
   var submit = document.getElementById('Submit');
   var temp = parseInt(document.getElementById("temperature-value").innerText);

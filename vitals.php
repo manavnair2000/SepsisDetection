@@ -105,11 +105,11 @@ try{
     </div>
 	</div>
 	</div>
-<form id="vital" action="insert_vitals.php" onchange="changeSubmit();" class="regform" method="post">
+<form id="vital" action="insert_vitals.php" onsubmit="return clickSubmit();" class="regform" method="post">
   <!--label for="temperature"> Temperature: </label> <br-->
-  <input id="temperature" name="temperature" type="text" maxlength="2" placeholder="in &deg;C" /> <br>
+  <input id="temperature" name="temperature" type="text" maxlength="2" placeholder="in &deg;C" />
   <!--label for="heartrate"> Heart Rate: </label> </br-->
-  <input id="heartrate" name="heartrate" type="text" maxlength="2" placeholder="in bpm" /><br>
+  <input id="heartrate" name="heartrate" type="text" maxlength="2" placeholder="in bpm" />
   <label for="wbc"> WBC:</label> </br>
   <input id="wbc" name="wbc" oninput="SIRS();" type="text" maxlength="2" placeholder="in %" /></br>
   <label for="respiratoryrate"> Respiratory Rate: </label> </br>
