@@ -450,6 +450,206 @@ try{
                                     </tr>
                                     <tr>
                                         <td>8</td>
+                                        <td>Bilirubin_direct</td>
+                                        <td><?php $sql="SELECT patient_vital.Bilirubin_direct FROM clinical_database.patient_vital WHERE patient_id = ? AND date_of_entry = (SELECT MAX(patient_vital.date_of_entry) FROM clinical_database.patient_vital)";
+                                        $stmt = $conn->prepare($sql);
+                                        $stmt->bind_param('i', $pid);
+                                        $stmt->execute();
+                                        $result = $stmt->get_result();
+                                        if (!$row = $result -> fetch_array(MYSQLI_NUM)){
+                                          echo "No record";
+                                        }
+                                        else{
+                                          echo $row[0];
+                                        }
+                                         ?></td>
+                                        <td><?php $sql="SELECT MAX(patient_vital.Bilirubin_direct) FROM clinical_database.patient_vital WHERE patient_id = ? ";
+                                        $stmt = $conn->prepare($sql);
+                                        $stmt->bind_param('i', $pid);
+                                        $stmt->execute();
+                                        $result = $stmt->get_result();
+                                        if (!$row = $result -> fetch_array(MYSQLI_NUM)){
+                                          echo "No record";
+                                        }
+                                        else{
+                                          echo $row[0];
+                                        }
+                                        ?></td>
+                                        <td><?php $sql="SELECT ROUND(AVG(patient_vital.Bilirubin_direct),1) FROM clinical_database.patient_vital WHERE patient_id = ? ";
+                                        $stmt = $conn->prepare($sql);
+                                        $stmt->bind_param('i', $pid);
+                                        $stmt->execute();
+                                        $result = $stmt->get_result();
+                                        if (!$row = $result -> fetch_array(MYSQLI_NUM)){
+                                          echo "No record";
+                                        }
+                                        else{
+                                          echo $row[0];
+                                        }
+                                        ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>9</td>
+                                        <td>Platelets</td>
+                                        <td><?php $sql="SELECT patient_vital.Platelets FROM clinical_database.patient_vital WHERE patient_id = ? AND date_of_entry = (SELECT MAX(patient_vital.date_of_entry) FROM clinical_database.patient_vital)";
+                                        $stmt = $conn->prepare($sql);
+                                        $stmt->bind_param('i', $pid);
+                                        $stmt->execute();
+                                        $result = $stmt->get_result();
+                                        if (!$row = $result -> fetch_array(MYSQLI_NUM)){
+                                          echo "No record";
+                                        }
+                                        else{
+                                          echo $row[0];
+                                        }
+                                         ?></td>
+                                        <td><?php $sql="SELECT MAX(patient_vital.Platelets) FROM clinical_database.patient_vital WHERE patient_id = ? ";
+                                        $stmt = $conn->prepare($sql);
+                                        $stmt->bind_param('i', $pid);
+                                        $stmt->execute();
+                                        $result = $stmt->get_result();
+                                        if (!$row = $result -> fetch_array(MYSQLI_NUM)){
+                                          echo "No record";
+                                        }
+                                        else{
+                                          echo $row[0];
+                                        }
+                                        ?></td>
+                                        <td><?php $sql="SELECT ROUND(AVG(patient_vital.Platelets),1) FROM clinical_database.patient_vital WHERE patient_id = ? ";
+                                        $stmt = $conn->prepare($sql);
+                                        $stmt->bind_param('i', $pid);
+                                        $stmt->execute();
+                                        $result = $stmt->get_result();
+                                        if (!$row = $result -> fetch_array(MYSQLI_NUM)){
+                                          echo "No record";
+                                        }
+                                        else{
+                                          echo $row[0];
+                                        }
+                                        ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>10</td>
+                                        <td>Platelets</td>
+                                        <td><?php $sql="SELECT patient_vital.Magnesium FROM clinical_database.patient_vital WHERE patient_id = ? AND date_of_entry = (SELECT MAX(patient_vital.date_of_entry) FROM clinical_database.patient_vital)";
+                                        $stmt = $conn->prepare($sql);
+                                        $stmt->bind_param('i', $pid);
+                                        $stmt->execute();
+                                        $result = $stmt->get_result();
+                                        if (!$row = $result -> fetch_array(MYSQLI_NUM)){
+                                          echo "No record";
+                                        }
+                                        else{
+                                          echo $row[0];
+                                        }
+                                         ?></td>
+                                        <td><?php $sql="SELECT MAX(patient_vital.Magnesium) FROM clinical_database.patient_vital WHERE patient_id = ? ";
+                                        $stmt = $conn->prepare($sql);
+                                        $stmt->bind_param('i', $pid);
+                                        $stmt->execute();
+                                        $result = $stmt->get_result();
+                                        if (!$row = $result -> fetch_array(MYSQLI_NUM)){
+                                          echo "No record";
+                                        }
+                                        else{
+                                          echo $row[0];
+                                        }
+                                        ?></td>
+                                        <td><?php $sql="SELECT ROUND(AVG(patient_vital.Magnesium),1) FROM clinical_database.patient_vital WHERE patient_id = ? ";
+                                        $stmt = $conn->prepare($sql);
+                                        $stmt->bind_param('i', $pid);
+                                        $stmt->execute();
+                                        $result = $stmt->get_result();
+                                        if (!$row = $result -> fetch_array(MYSQLI_NUM)){
+                                          echo "No record";
+                                        }
+                                        else{
+                                          echo $row[0];
+                                        }
+                                        ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>11</td>
+                                        <td>BUN</td>
+                                        <td><?php $sql="SELECT patient_vital.BUN FROM clinical_database.patient_vital WHERE patient_id = ? AND date_of_entry = (SELECT MAX(patient_vital.date_of_entry) FROM clinical_database.patient_vital)";
+                                        $stmt = $conn->prepare($sql);
+                                        $stmt->bind_param('i', $pid);
+                                        $stmt->execute();
+                                        $result = $stmt->get_result();
+                                        if (!$row = $result -> fetch_array(MYSQLI_NUM)){
+                                          echo "No record";
+                                        }
+                                        else{
+                                          echo $row[0];
+                                        }
+                                         ?></td>
+                                        <td><?php $sql="SELECT MAX(patient_vital.BUN) FROM clinical_database.patient_vital WHERE patient_id = ? ";
+                                        $stmt = $conn->prepare($sql);
+                                        $stmt->bind_param('i', $pid);
+                                        $stmt->execute();
+                                        $result = $stmt->get_result();
+                                        if (!$row = $result -> fetch_array(MYSQLI_NUM)){
+                                          echo "No record";
+                                        }
+                                        else{
+                                          echo $row[0];
+                                        }
+                                        ?></td>
+                                        <td><?php $sql="SELECT ROUND(AVG(patient_vital.BUN),1) FROM clinical_database.patient_vital WHERE patient_id = ? ";
+                                        $stmt = $conn->prepare($sql);
+                                        $stmt->bind_param('i', $pid);
+                                        $stmt->execute();
+                                        $result = $stmt->get_result();
+                                        if (!$row = $result -> fetch_array(MYSQLI_NUM)){
+                                          echo "No record";
+                                        }
+                                        else{
+                                          echo $row[0];
+                                        }
+                                        ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>12</td>
+                                        <td>Calcium</td>
+                                        <td><?php $sql="SELECT patient_vital.Calcium FROM clinical_database.patient_vital WHERE patient_id = ? AND date_of_entry = (SELECT MAX(patient_vital.date_of_entry) FROM clinical_database.patient_vital)";
+                                        $stmt = $conn->prepare($sql);
+                                        $stmt->bind_param('i', $pid);
+                                        $stmt->execute();
+                                        $result = $stmt->get_result();
+                                        if (!$row = $result -> fetch_array(MYSQLI_NUM)){
+                                          echo "No record";
+                                        }
+                                        else{
+                                          echo $row[0];
+                                        }
+                                         ?></td>
+                                        <td><?php $sql="SELECT MAX(patient_vital.Calcium) FROM clinical_database.patient_vital WHERE patient_id = ? ";
+                                        $stmt = $conn->prepare($sql);
+                                        $stmt->bind_param('i', $pid);
+                                        $stmt->execute();
+                                        $result = $stmt->get_result();
+                                        if (!$row = $result -> fetch_array(MYSQLI_NUM)){
+                                          echo "No record";
+                                        }
+                                        else{
+                                          echo $row[0];
+                                        }
+                                        ?></td>
+                                        <td><?php $sql="SELECT ROUND(AVG(patient_vital.Calcium),1) FROM clinical_database.patient_vital WHERE patient_id = ? ";
+                                        $stmt = $conn->prepare($sql);
+                                        $stmt->bind_param('i', $pid);
+                                        $stmt->execute();
+                                        $result = $stmt->get_result();
+                                        if (!$row = $result -> fetch_array(MYSQLI_NUM)){
+                                          echo "No record";
+                                        }
+                                        else{
+                                          echo $row[0];
+                                        }
+                                        ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>13</td>
                                         <td>Altered Mentation</td>
                                         <td><?php $sql="SELECT patient_vital.altered_mentation FROM clinical_database.patient_vital WHERE patient_id = ? AND date_of_entry = (SELECT MAX(patient_vital.date_of_entry) FROM clinical_database.patient_vital)";
                                         $stmt = $conn->prepare($sql);

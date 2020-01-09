@@ -118,6 +118,21 @@ try{
 <label for="systolicbp"> Systolic BP: </label> </br>
   <input id="systolicbp" name="systolicbp" oninput="qSOFA();" type="text" maxlength="3" placeholder="in mm Hg" />
 <br>
+<label> Bilirubin_direct </label> </br>
+  <input id="Bilirubin_direct" name="Bilirubin_direct"  type="text" maxlength="3" placeholder="in mg/dl" />
+<br>
+<label> Platelets </label> </br>
+  <input id="Platelets" name="Platelets"  type="text" maxlength="3" placeholder="(count*10^3/µL)" />
+<br>
+<label> Magnesium </label> </br>
+  <input id="Magnesium" name="Magnesium"  type="text" maxlength="3" placeholder="in mmol/dL" />
+<br>
+<label> BUN </label> </br>
+  <input id="BUN" name="BUN"  type="text" maxlength="3" placeholder="Blood urea nitrogen in mg/dL" />
+<br>
+<label> Calcium </label> </br>
+  <input id="Calcium" name="Calcium"  type="text" maxlength="3" placeholder="in mg/dLś" />
+<br>
 <label for="alteredmentation"> Altered Mentation: </label> </br>
   <input id="alteredmentation" name="alteredmentation" oninput="qSOFA();" type="text" maxlength="2" placeholder="in GCS scale" /> <br/>
   <label for="sirs"> SIRS score: </label> <br>
