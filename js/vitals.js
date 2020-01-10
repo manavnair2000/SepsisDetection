@@ -1,3 +1,4 @@
+import * as tf from '@tensorflow/tfjs';
 function clickSubmit() {
   //var form = document.getElementById('vital');
   //var submit = document.getElementById('Submit');
