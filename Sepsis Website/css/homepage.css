@@ -1,0 +1,44 @@
+.innercontent{
+margin-left:10%;
+margin-right:10%;
+background-color:#FFFFFF;
+margin-bottom:0px;
+padding:5px;
+
+}
+
+.outercontent{
+	margin-top:0px;
+	margin:0px 0px 0px 0px;
+	background-color:#001a33;
+}
+
+.myfooter{
+	background-color:#1a1a00;
+	color:white;
+}
+	
+
+@media only screen and (max-width:600px){
+	.innercontent{
+		margin-left:0px;
+		margin-right:0px;
+	}
+}
+
+.symptomul{
+	margin-top:10px;
+}
+.symptomul li{
+	padding:5px;
+	margin-left:5px;
+}
+
+p,ul{
+	letter-spacing:1px;
+}
+
+.desc::first-letter {
+  font-size: 200%;
+  color: #ff1a1a;
+}
