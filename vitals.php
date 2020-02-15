@@ -17,22 +17,22 @@ try{
         $pname = $row['patient_name'];
   ?>
 <!DOCTYPE html>
+<html>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-<html>
 
 <head>
 <title>Vitals</title>
     <link href="https://fonts.googleapis.com/css?family=Cutive+Mono&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.sound.min.js"></script>
-    <script language="javascript" type="text/javascript" src="./sketch.js" defer></script>
+    <!-- <script language="javascript" type="text/javascript" src="./js/vitals.js" defer></script> -->
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.0/dist/tf.min.js"></script>
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
 
 
     const model = tf.loadLayersModel('http://localhost/Website/js/model.json');
-    </script>
+    </script> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -44,7 +44,7 @@ try{
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="css/vitals.css" type="text/css" >
-<script src="js/vitals.js"></script>
+<script src="./js/vitals.js"></script>
 </head>
 <body >
 <!-- Navigation bar -->
